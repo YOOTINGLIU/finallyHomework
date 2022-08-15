@@ -141,7 +141,7 @@ image {
 }
 
 .header {
-	background-image: url(/js-finallyHomework/assets/the-urban-landscape-1698285.png);
+	background-image: url(assets/the-urban-landscape-1698285.png);
 	background-size: cover;
 	height: 762px;
 	display: flex;
@@ -218,6 +218,25 @@ image {
 	border-radius: 3px;
 	background: #559ac8;
 }
+
+.main{
+	text-align: center;
+}
+.main h1{
+	font-size: 36px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+.containerImg{
+	/* background: url(https://khh.travel/content/images/Attractions/1931/640x480_image028_8858.jpg); */
+	width: 500px;
+	height: 400px;
+	border: 1px #000 solid;
+}
+
+
+
+
 
 
 .footer{
