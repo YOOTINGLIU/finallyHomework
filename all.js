@@ -11990,9 +11990,7 @@ var travelInformation = [
     }
 ];
 
-
 var len = travelInformation.length;
-
 
 // 取得DOM資料
 
@@ -12008,73 +12006,28 @@ areas.addEventListener('click', popularAreas);
 
 
 
-//新增旅遊資訊更新網頁
+
 
 // 選擇地區並更新網頁
 function selectAreas(e) {
-    var str = [];
     var num = select.value;
     var administrativeArea = select.options[select.selectedIndex].text;
     titel.textContent = administrativeArea;
-
-    for (var i = 0; i < len; i++) {
-        if (num == travelInformation[i].Zipcode) {
-            str += '<li class="container">'
-                + '<div class="containerImg"'
-                + 'style="background: url(' + travelInformation[i].Picture1 + ');">'
-                + '<div><em class="attraction">' + travelInformation[i].Name + '</em></div>'
-                + '<div><em class="place">' + administrativeArea + '</em></div>'
-                + '</div>'
-                + '<div class="information">'
-                + '<ul>'
-                + '<li><img src="/assets/icons_clock.png" alt="">' + travelInformation[i].Opentime.slice(0,11) + '</li>'
-                + '<li><img src="/assets/icons_pin.png" alt="">' + travelInformation[i].Add.slice(0,30) + '</li>'
-                + '<li><img src="/assets/icons_phone.png" alt="">' +" "+travelInformation[i].Tel + '</li>'
-                + '</ul>'
-                + '<span><img src="/assets/icons_tag.png" alt="">' + travelInformation[i].Ticketinfo.slice(0,9) + '</span>'
-                + '</li>';
-
-        }
-    }
-    // upData(num);
-    main.innerHTML = str;
-
-
+    upData(num, administrativeArea);
 };
 
 // 熱門地區並更新網頁
 function popularAreas(e) {
-    var str = [];
     var num = e.target.value;
     var administrativeArea = e.target.textContent;
     titel.textContent = administrativeArea;
     // if (e.target.nodeName !== 'li') { return };
-
-    for (var i = 0; i < len; i++) {
-        if (num == travelInformation[i].Zipcode) {
-            str += '<li class="container">'
-                + '<div class="containerImg"'
-                + 'style="background: url(' + travelInformation[i].Picture1 + ');">'
-                + '<div><em class="attraction">' + travelInformation[i].Name + '</em></div>'
-                + '<div><em class="place">' + administrativeArea + '</em></div>'
-                + '</div>'
-                + '<div class="information">'
-                + '<ul>'
-                + '<li><img src="/assets/icons_clock.png" alt="">' + travelInformation[i].Opentime.slice(0, 11) + '</li>'
-                + '<li><img src="/assets/icons_pin.png" alt="">' + travelInformation[i].Add.slice(0, 30) + '</li>'
-                + '<li><img src="/assets/icons_phone.png" alt="">' + " " + travelInformation[i].Tel + '</li>'
-                + '</ul>'
-                + '<span><img src="/assets/icons_tag.png" alt="">' + travelInformation[i].Ticketinfo.slice(0, 9) + '</span>'
-                + '</li>';
-
-        }
-    }
-
-    main.innerHTML = str;
+    upData(num, administrativeArea);
 };
 
-
-function upData(num) {
+// 更新網頁資料
+function upData(num, administrativeArea) {
+    var str = [];
     for (var i = 0; i < len; i++) {
         if (num == travelInformation[i].Zipcode) {
             str += '<li class="container">'
@@ -12094,6 +12047,7 @@ function upData(num) {
 
         }
     }
+    main.innerHTML = str;
 }
 
 
