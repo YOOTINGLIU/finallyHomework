@@ -1340,7 +1340,7 @@ var travelInformation = [
         "Toldescribe": "三鳯宮舊名三鳯亭，初建於清朝康熙年間，至今已有三百餘年的歷史，為昔日三塊厝住民(高雄火車站前、建國三路附近)的守護神，祭祀主神為中壇元帥哪吒三太子。1971年遷至河北二路現址，北方式的三層樓寺廟建築不論雕刻配色均典雅華麗，以平塗彩繪技法方式的門神出自大師潘麗水之作，莊嚴細膩，廣濶的廟埕更添加恢宏氣勢。三鳯宮是全臺最大的三太子廟，每逢慶典來自各地的三太子陣頭不分畫夜的競技表演吸引信眾，儼然是宗教界最歡欣熱鬧的嘉年華會。",
         "Description": "初建於清朝康熙年間，至今已有三百餘年的歷史，為昔日三塊厝住民的守護神，祭祀主神為中壇元帥哪吒三太子",
         "Tel": "886-7-2871851",
-        "Add": "高雄市807三民區河北二路134號",
+        "Add": "高雄市807區河北二路134號",
         "Zipcode": "807",
         "Travellinginfo": "火車：高雄火車站出前站後往右朝建國三路前進，請於建國三路向右轉並於第三個路口轉左，走繼光街，在第三個路口向右轉入河北二路(三鳳宮在右手邊)。捷運：捷運抵達高雄火車站後，搭前站前的紅27號公車開往市中一路口，至三鳳中街下車，再步行往河北二路134號前進，約4分鐘抵達。高鐵：抵達高鐵左營站後，搭捷運左營高鐵站往捷運高雄車站，抵達高雄車站後，搭前站前的紅27號公車開往市中一路口，至三...",
         "Opentime": "05:00–22:00",
@@ -11991,5 +11991,109 @@ var travelInformation = [
 ];
 
 
+var len = travelInformation.length;
+
+
+// 取得DOM資料
+
+var select = document.querySelector('.select');
+var areas = document.querySelector('.areas');
+var main = document.querySelector('.main');
+var titel = document.querySelector('.titel');
+
+// 監聽事件
+
+select.addEventListener('change', selectAreas);
+areas.addEventListener('click', popularAreas);
+
+
+
+//新增旅遊資訊更新網頁
+
+// 選擇地區並更新網頁
+function selectAreas(e) {
+    var str = [];
+    var num = select.value;
+    var administrativeArea = select.options[select.selectedIndex].text;
+    titel.textContent = administrativeArea;
+
+    for (var i = 0; i < len; i++) {
+        if (num == travelInformation[i].Zipcode) {
+            str += '<li class="container">'
+                + '<div class="containerImg"'
+                + 'style="background: url(' + travelInformation[i].Picture1 + ');">'
+                + '<div><em class="attraction">' + travelInformation[i].Name + '</em></div>'
+                + '<div><em class="place">' + administrativeArea + '</em></div>'
+                + '</div>'
+                + '<div class="information">'
+                + '<ul>'
+                + '<li><img src="/assets/icons_clock.png" alt="">' + travelInformation[i].Opentime.slice(0,11) + '</li>'
+                + '<li><img src="/assets/icons_pin.png" alt="">' + travelInformation[i].Add.slice(0,30) + '</li>'
+                + '<li><img src="/assets/icons_phone.png" alt="">' +" "+travelInformation[i].Tel + '</li>'
+                + '</ul>'
+                + '<span><img src="/assets/icons_tag.png" alt="">' + travelInformation[i].Ticketinfo.slice(0,9) + '</span>'
+                + '</li>';
+
+        }
+    }
+    // upData(num);
+    main.innerHTML = str;
+
+
+};
+
+// 熱門地區並更新網頁
+function popularAreas(e) {
+    var str = [];
+    var num = e.target.value;
+    var administrativeArea = e.target.textContent;
+    titel.textContent = administrativeArea;
+    // if (e.target.nodeName !== 'li') { return };
+
+    for (var i = 0; i < len; i++) {
+        if (num == travelInformation[i].Zipcode) {
+            str += '<li class="container">'
+                + '<div class="containerImg"'
+                + 'style="background: url(' + travelInformation[i].Picture1 + ');">'
+                + '<div><em class="attraction">' + travelInformation[i].Name + '</em></div>'
+                + '<div><em class="place">' + administrativeArea + '</em></div>'
+                + '</div>'
+                + '<div class="information">'
+                + '<ul>'
+                + '<li><img src="/assets/icons_clock.png" alt="">' + travelInformation[i].Opentime.slice(0, 11) + '</li>'
+                + '<li><img src="/assets/icons_pin.png" alt="">' + travelInformation[i].Add.slice(0, 30) + '</li>'
+                + '<li><img src="/assets/icons_phone.png" alt="">' + " " + travelInformation[i].Tel + '</li>'
+                + '</ul>'
+                + '<span><img src="/assets/icons_tag.png" alt="">' + travelInformation[i].Ticketinfo.slice(0, 9) + '</span>'
+                + '</li>';
+
+        }
+    }
+
+    main.innerHTML = str;
+};
+
+
+function upData(num) {
+    for (var i = 0; i < len; i++) {
+        if (num == travelInformation[i].Zipcode) {
+            str += '<li class="container">'
+                + '<div class="containerImg"'
+                + 'style="background: url(' + travelInformation[i].Picture1 + ');">'
+                + '<div><em class="attraction">' + travelInformation[i].Name + '</em></div>'
+                + '<div><em class="place">' + administrativeArea + '</em></div>'
+                + '</div>'
+                + '<div class="information">'
+                + '<ul>'
+                + '<li><img src="/assets/icons_clock.png" alt="">' + travelInformation[i].Opentime.slice(0, 11) + '</li>'
+                + '<li><img src="/assets/icons_pin.png" alt="">' + travelInformation[i].Add.slice(0, 30) + '</li>'
+                + '<li><img src="/assets/icons_phone.png" alt="">' + " " + travelInformation[i].Tel + '</li>'
+                + '</ul>'
+                + '<span><img src="/assets/icons_tag.png" alt="">' + travelInformation[i].Ticketinfo.slice(0, 9) + '</span>'
+                + '</li>';
+
+        }
+    }
+}
 
 

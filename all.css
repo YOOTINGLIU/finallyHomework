@@ -169,10 +169,11 @@ image {
 	border: 2px #fff solid;
 	font-size: 40px;
 	background: #fff;
-	opacity:0.5;
+	opacity: 0.5;
 	border-radius: 5px;
 }
-.popular-areas{
+
+.popular-areas {
 	position: relative;
 	background: #fff;
 	width: 500px;
@@ -185,11 +186,13 @@ image {
 	padding: 20px;
 	border-radius: 5px;
 }
-.popular-areas h3{
+
+.popular-areas h3 {
 	font-weight: bold;
 	font-size: 25px;
 }
-.areas{
+
+.areas {
 	display: flex;
 	justify-content: space-around;
 	text-align: center;
@@ -197,49 +200,80 @@ image {
 	padding-top: 20px;
 }
 
-.areas-1{
+.areas-1 {
 	width: 80px;
 	border-radius: 3px;
 	background: #8a82cc;
 }
-.areas-2{
+
+.areas-2 {
 	width: 80px;
 	border-radius: 3px;
 	background: #ffa782;
 }
 
-.areas-3{
+.areas-3 {
 	width: 80px;
 	border-radius: 3px;
 	background: #f5d005;
 }
-.areas-4{
+
+.areas-4 {
 	width: 80px;
 	border-radius: 3px;
 	background: #559ac8;
 }
 
-.main{
-	text-align: center;
-}
-.main h1{
-	font-size: 36px;
+.titel {
 	padding-top: 20px;
 	padding-bottom: 20px;
-}
-.containerImg{
-	/* background: url(https://khh.travel/content/images/Attractions/1931/640x480_image028_8858.jpg); */
-	width: 500px;
-	height: 400px;
-	border: 1px #000 solid;
+	font-size: 36px;
+	text-align: center;
 }
 
+.main {
+	display: flex;
+	justify-content: space-between;
 
+	flex-wrap: wrap;
+	margin-right: 50px;
+	margin-left: 50px;
+}
 
+.container {
+	border: 1px gray solid;
+	margin-top: 20px;
+	list-style-type:none;
+}
 
+.containerImg {
+	width: 520px;
+	height: 250px;
+	color: #fff;
+	font-weight: bold;
+	display: flex;
+	align-items: flex-end;
+	justify-content: space-between;
+	padding-right: 20px;
+	padding-left: 20px;
+	padding-bottom: 10px;
 
+}
 
-.footer{
+.information {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+	font-size: 1em;
+	padding: 20px;
+	line-height: 2em;
+}
+
+.information img {
+	padding-right: 10px;
+}
+
+.footer {
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -248,14 +282,16 @@ image {
 	background: #559ac8;
 	height: 120px;
 }
-.footer h4{
+
+.footer h4 {
 	color: #fff;
 	font-size: 25px;
-	
+
 }
-.footer p{
+
+.footer p {
 	padding-top: 20px;
 	color: #fbd267;
 	font-size: 25px;
-	
+
 }
