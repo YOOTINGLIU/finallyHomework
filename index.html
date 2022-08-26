@@ -5,8 +5,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>高雄旅遊網站</title>
     <link rel="stylesheet" href="/all.css">
+<!-- jquery連結 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<!-- JQurey 分頁套件 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/simplePagination.js/1.6/jquery.simplePagination.js"></script>
 </head>
 
 <body>
@@ -27,12 +31,12 @@
         </div>
         <div class="popular-areas">
             <h3>熱門行政區</h3>
-            <ul class="areas">
-                <li class="areas-1" value="802">苓雅區</li>
-                <li class="areas-2" value="807">三民區</li>
-                <li class="areas-3" value="800">新興區</li>
-                <li class="areas-4" value="804">鹽埕區</li>
-            </ul>
+            <div class="areas">
+                <button class="areas-1" value="802">苓雅區</button>
+                <button class="areas-2" value="807">三民區</button>
+                <button class="areas-3" value="800">新興區</button>
+                <button class="areas-4" value="804">鹽埕區</button>
+            </div>
         </div>
         <hr>
         <h1 class="titel">高雄地區景點</h1>
@@ -70,18 +74,15 @@
                 </div>
             </li> -->
 
-
-
         </ul>
-
+        <div id="pagination-container"></div>
         <hr>
-
         <div class="footer">
             <div>
                 <h4>高雄旅遊網</h4>
                 <p>資料來源:高雄市政府</p>
             </div>
-
+    
         </div>
     </div>
 

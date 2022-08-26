@@ -11989,27 +11989,22 @@ var travelInformation = [
         "Picdescribe3": ""
     }
 ];
+// 旅遊地點JSON 資料長度
 var len = travelInformation.length;
 
 // 取得DOM資料
-
 var select = document.querySelector('.select');
 var areas = document.querySelector('.areas');
-var areas1 = document.querySelector('.areas-1');
-var areas2 = document.querySelector('.areas-2');
-var areas3 = document.querySelector('.areas-3');
-var areas4 = document.querySelector('.areas-4');
-var main = document.querySelector('.main');
 var titel = document.querySelector('.titel');
+var main = document.querySelector('.main');
+
+// 分頁每個頁面要顯示多少項目
+var perPage=12;
 
 // 監聽事件
 
 select.addEventListener('change', selectAreas);
-// areas.addEventListener('click', popularAreas);
-areas1.addEventListener('click', popularAreas);
-areas2.addEventListener('click', popularAreas);
-areas3.addEventListener('click', popularAreas);
-areas4.addEventListener('click', popularAreas);
+areas.addEventListener('click', popularAreas);
 
 // 網頁初始化
 startUp();
@@ -12024,10 +12019,11 @@ function selectAreas(e) {
 // 熱門地區並更新網頁
 function popularAreas(e) {
     var num = e.target.value;
-    var administrativeArea = e.target.textContent;
-    titel.textContent = administrativeArea;
-    upData(num);
-    // if (e.target.nodeName !== 'li') {return;}
+    if(num){
+        var administrativeArea = e.target.textContent;
+        titel.textContent = administrativeArea;
+        upData(num);
+    }
 };
 
 // 更新網頁資料
@@ -12049,10 +12045,10 @@ function upData(num) {
                 + '</ul>'
                 + '<span><img src="/assets/icons_tag.png" alt="">' + travelInformation[i].Ticketinfo.slice(0, 9) + '</span>'
                 + '</li>';
-
         }
     }
     main.innerHTML = str;
+    pagination()
 }
 // 初始頁面資料
 function startUp() {
@@ -12073,10 +12069,45 @@ function startUp() {
             + '</ul>'
             + '<span><img src="/assets/icons_tag.png" alt="">' + travelInformation[i].Ticketinfo.slice(0, 9) + '</span>'
             + '</li>';
-
     }
     main.innerHTML = str;
+    pagination()
 }
+// 分頁
+function pagination(){
+    var numItem = $('.container').length;
+    // console.log(numItem);
+    
+    $('.container').slice(perPage).hide();
+    $('#pagination-container').pagination({
+        items: numItem,
+        itemsOnPage: perPage,
+        prevText: "&laquo;",
+        nextText: "&raquo;",
+        onPageClick: function (pageNumber) {
+            // 計算起始
+            var form = perPage * (pageNumber - 1);
+            // 計算結束
+            var to = form + perPage;
+            // 取得資料 將所有資料隱藏>對資料做切割(form到to)>顯示切割的資料
+            $(".container").hide().slice(form, to).show();
+        }
+    })
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
