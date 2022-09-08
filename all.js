@@ -12028,23 +12028,22 @@ function popularAreas(e) {
 
 // 更新網頁資料
 function upData(num) {
-    var str = [];
-    for (var i = 0; i < len; i++) {
+    let str = [];
+    for (let i = 0; i < len; i++) {
         if (num == travelInformation[i].Zipcode) {
-            str += '<li class="container">'
-                + '<div class="containerImg"'
-                + 'style="background: url(' + travelInformation[i].Picture1 + ');">'
-                + '<div><em class="attraction">' + travelInformation[i].Name + '</em></div>'
-                + '<div><em class="place">' + travelInformation[i].Add.slice(6, 9) + '</em></div>'
-                + '</div>'
-                + '<div class="information">'
-                + '<ul>'
-                + '<li><img src="/assets/icons_clock.png" alt="">' + travelInformation[i].Opentime.slice(0, 11) + '</li>'
-                + '<li><img src="/assets/icons_pin.png" alt="">' + travelInformation[i].Add.slice(0, 30) + '</li>'
-                + '<li><img src="/assets/icons_phone.png" alt="">' + " " + travelInformation[i].Tel + '</li>'
-                + '</ul>'
-                + '<span><img src="/assets/icons_tag.png" alt="">' + travelInformation[i].Ticketinfo.slice(0, 9) + '</span>'
-                + '</li>';
+            str += `<li class="container">
+            <div class="containerImg"style="background: url( ${travelInformation[i].Picture1} );">
+                <div><em class="attraction">  ${travelInformation[i].Name}  </em></div>
+                <div><em class="place">  ${travelInformation[i].Add.slice(6, 9)}  </em></div>
+             </div>
+            <div class="information">
+                <ul>
+                    <li><img src="/assets/icons_clock.png" alt=""> ${travelInformation[i].Opentime.slice(0, 11)} </li>
+                    <li><img src="/assets/icons_pin.png" alt="">${travelInformation[i].Add.slice(0, 30)} </li>
+                    <li><img src="/assets/icons_phone.png" alt="">${travelInformation[i].Tel}</li>
+                </ul>'
+            <span><img src="/assets/icons_tag.png" alt=""> ${travelInformation[i].Ticketinfo.slice(0, 9)} </span>
+        </li>`;
         }
     }
     main.innerHTML = str;
@@ -12052,23 +12051,21 @@ function upData(num) {
 }
 // 初始頁面資料
 function startUp() {
-    var str = [];
-    for (var i = 0; i < len; i++) {
-
-        str += '<li class="container">'
-            + '<div class="containerImg"'
-            + 'style="background: url(' + travelInformation[i].Picture1 + ');">'
-            + '<div><em class="attraction">' + travelInformation[i].Name + '</em></div>'
-            + '<div><em class="place">' + travelInformation[i].Add.slice(6, 9) + '</em></div>'
-            + '</div>'
-            + '<div class="information">'
-            + '<ul>'
-            + '<li><img src="/assets/icons_clock.png" alt="">' + travelInformation[i].Opentime.slice(0, 11) + '</li>'
-            + '<li><img src="/assets/icons_pin.png" alt="">' + travelInformation[i].Add.slice(0, 30) + '</li>'
-            + '<li><img src="/assets/icons_phone.png" alt="">' + " " + travelInformation[i].Tel + '</li>'
-            + '</ul>'
-            + '<span><img src="/assets/icons_tag.png" alt="">' + travelInformation[i].Ticketinfo.slice(0, 9) + '</span>'
-            + '</li>';
+    let str = [];
+    for (let i = 0; i < len; i++) {
+        str += `<li class="container">
+                    <div class="containerImg"style="background: url( ${travelInformation[i].Picture1} );">
+                        <div><em class="attraction">  ${travelInformation[i].Name}  </em></div>
+                        <div><em class="place">  ${travelInformation[i].Add.slice(6, 9)}  </em></div>
+                     </div>
+                    <div class="information">
+                        <ul>
+                            <li><img src="/assets/icons_clock.png" alt=""> ${travelInformation[i].Opentime.slice(0, 11)} </li>
+                            <li><img src="/assets/icons_pin.png" alt="">${travelInformation[i].Add.slice(0, 30)} </li>
+                            <li><img src="/assets/icons_phone.png" alt="">${travelInformation[i].Tel}</li>
+                        </ul>'
+                    <span><img src="/assets/icons_tag.png" alt=""> ${travelInformation[i].Ticketinfo.slice(0, 9)} </span>
+                </li>`;
     }
     main.innerHTML = str;
     pagination()
@@ -12094,21 +12091,5 @@ function pagination(){
         }
     })
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
