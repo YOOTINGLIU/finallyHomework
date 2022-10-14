@@ -12041,7 +12041,7 @@ function upData(num) {
                     <li><img src="./assets/icons_clock.png" alt=""> ${travelInformation[i].Opentime.slice(0, 11)} </li>
                     <li><img src="./assets/icons_pin.png" alt="">${travelInformation[i].Add.slice(0, 30)} </li>
                     <li><img src="./assets/icons_phone.png" alt="">${travelInformation[i].Tel}</li>
-                </ul>'
+                </ul>
             <span><img src="./assets/icons_tag.png" alt=""> ${travelInformation[i].Ticketinfo.slice(0, 9)} </span>
         </li>`;
         }
@@ -12063,7 +12063,7 @@ function startUp() {
                             <li><img src="./assets/icons_clock.png" alt=""> ${travelInformation[i].Opentime.slice(0, 11)} </li>
                             <li><img src="./assets/icons_pin.png" alt="">${travelInformation[i].Add.slice(0, 30)} </li>
                             <li><img src="./assets/icons_phone.png" alt="">${travelInformation[i].Tel}</li>
-                        </ul>'
+                        </ul>
                     <span><img src="./assets/icons_tag.png" alt=""> ${travelInformation[i].Ticketinfo.slice(0, 9)} </span>
                 </li>`;
     }
